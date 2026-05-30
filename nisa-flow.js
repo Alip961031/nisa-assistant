@@ -1,29 +1,29 @@
-// NISA FLOW FILE
-// Edit topic cards and paper roll wording here.
-// Main step handling remains in index.html. This file is safe for wording/config only.
 
-window.NISA_FLOW = {
-  topicCards: [
-    { icon: "📜", title: "Paper Roll", desc: "Request paper rolls" },
-    { icon: "📱", title: "Terminal Help", desc: "No automated flow yet" },
-    { icon: "💬", title: "General Inquiries", desc: "Ask about PAYSYS services or payment terminals" }
+paperRoll: {
+  intro: "Sure 😊 I can help with your paper roll request. I’ll just need a few details first.",
+  askSerial: "First, may I have your Terminal Serial Number?",
+
+  serialHints: [
+    "💡 You can find it at the back of your terminal.",
+    "💡 Please enter only one Terminal Serial Number.",
+    "💡 No need to type 'SN'.",
+    "Example: xxx-xxx-xxx or Nxxxxxxxxxx"
   ],
 
-  quickReplies: [],
-
-  paperRoll: {
-    serialGuideImage: "./serial-number-guide.png",
-
-    intro: "Sure 😊 I can help with your paper roll request. I’ll just need a few details first.",
-
-    askSerial: "First, may I have your Terminal Serial Number?",
-
-    // Multiple bubbles
-    serialHints: [
-      "💡 You can find it at the back of your terminal.",
-      "💡 Please enter only one Terminal Serial Number.",
-      "💡 No need to type 'SN'.",
-      "Example: xxx-xxx-xxx or Nxxxxxxxxxx"
-    ]
-  }
-};
+  // Two files shown side by side with download buttons
+  // Upload both files into the SAME folder as index.html and nisa-flow.js
+  downloadAssets: [
+    {
+      title: "Guide 1",
+      file: "./serial-number-guide-1.png",
+      downloadName: "serial-number-guide-1.png",
+      label: "Download"
+    },
+    {
+      title: "Guide 2",
+      file: "./serial-number-guide-2.png",
+      downloadName: "serial-number-guide-2.png",
+      label: "Download"
+    }
+  ]
+}
