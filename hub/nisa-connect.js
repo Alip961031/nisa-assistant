@@ -5,7 +5,7 @@
 // =============================================
 
 // Your Worker URL (the brain of NISA)
-const WORKER_URL = "nisa-deepseek-proxy.kgurun88.workers.dev";
+const WORKER_URL = "https://nisa-deepseek-proxy.kgurun88.workers.dev";
 
 // Session ID (keeps conversations connected)
 let sessionId = "hub_" + Date.now() + "_" + Math.random().toString(36).substr(2, 9);
