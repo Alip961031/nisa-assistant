@@ -37,7 +37,6 @@ async function sendToNISA(message) {
 document.addEventListener("DOMContentLoaded", function() {
 
   // Find the AI chat elements in your dashboard
-  // Looking for textarea/input where you type messages
   const findInput = () => {
     return document.querySelector("textarea[placeholder*='message']")
       || document.querySelector("textarea[placeholder*='Message']")
@@ -52,19 +51,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Find the send button
   const findSendBtn = () => {
-    // Look for send buttons in AI section
     const buttons = document.querySelectorAll("button");
     for (let btn of buttons) {
       const text = btn.textContent.trim().toLowerCase();
       if (text === "send" || text.includes("send")) {
-        // Make sure it's in the AI section
         const parent = btn.closest("[data-page='ai']") 
           || btn.closest(".ai-page")
           || btn.closest("#ai-page");
         if (parent) return btn;
       }
     }
-    // Fallback: last "Send" button on page
     const allSend = [...document.querySelectorAll("button")].filter(b => 
       b.textContent.trim().toLowerCase() === "send"
     );
@@ -80,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function() {
   };
 
   // =============================================
-  // MAIN HANDLER: What happens when you send a message
+  // MAIN HANDLER
   // =============================================
   async function handleSendMessage() {
     const input = findInput();
@@ -135,8 +131,6 @@ document.addEventListener("DOMContentLoaded", function() {
   // =============================================
   // CONNECT: Listen for Enter key and Send button
   // =============================================
-  
-  // Check every second until elements are found (in case page loads slowly)
   let attempts = 0;
   const connectInterval = setInterval(() => {
     attempts++;
